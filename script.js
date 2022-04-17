@@ -1,4 +1,4 @@
-const playerSelection = "ROCK";
+const playerSelection = window.prompt("What is your choice? Rock, Paper or Scissors?").toUpperCase();
 const computerSelection = computerPlay(); 
 let playerCounter = 0;
 let computerCounter = 0; 
@@ -23,4 +23,7 @@ function playRound (playerSelection, computerSelection) {
             return `You lose! ${playerSelection} is defeated by ${computerSelection}.`;
     }
 }
+
+
+
 console.log(playRound(playerSelection, computerSelection), playerCounter, computerCounter); 
