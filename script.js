@@ -1,6 +1,5 @@
 let playerCounter = 0;
 let computerCounter = 0; 
-let playerOutput; 
 
 function computerPlay () {
     const choices = ["ROCK", "PAPER", "SCISSORS"];
@@ -11,7 +10,7 @@ function computerPlay () {
 function getPlayerInput () {
     let playerInput = window.prompt("What is your choice? Rock, Paper or Scissors?").toUpperCase();
     if (playerInput === "ROCK" || playerInput === "PAPER" || playerInput === "SCISSORS" ) {
-        playerOutput = playerInput; 
+        let playerOutput = playerInput; 
         return playerOutput;
     } else {
         alert("Please try again, you can only enter 'Rock', 'Paper' or 'Scissors'.");
