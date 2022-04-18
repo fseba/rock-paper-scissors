@@ -1,11 +1,22 @@
-const playerInput = window.prompt("What is your choice? Rock, Paper or Scissors?").toUpperCase();
 let playerCounter = 0;
 let computerCounter = 0; 
-
+let playerOutput; 
 
 function computerPlay () {
     const choices = ["ROCK", "PAPER", "SCISSORS"];
     return choices[Math.floor(Math.random() * 3 )];
+}
+
+
+function getPlayerInput () {
+    let playerInput = window.prompt("What is your choice? Rock, Paper or Scissors?").toUpperCase();
+    if (playerInput === "ROCK" || playerInput === "PAPER" || playerInput === "SCISSORS" ) {
+        playerOutput = playerInput; 
+        return playerOutput;
+    } else {
+        alert("Please try again, you can only enter 'Rock', 'Paper' or 'Scissors'.");
+        return getPlayerInput();
+    }
 }
 
 function playRound (playerSelection, computerSelection) {
@@ -30,7 +41,7 @@ function game () {
     computerCounter = 0; 
 
     for (let i = 0; i < 5; i++){
-        playRound(playerInput, computerPlay());
+        playRound(getPlayerInput(), computerPlay());
     }
     playerCounter > computerCounter ? console.log("You won! GG WP!") : console.log("You lost! GG WP");
 }
