@@ -4,7 +4,7 @@ let playerCounter = 0;
 let computerCounter = 0; 
 
 function computerPlay() {
-    const choices = ["Rock", "Paper", "Scissors"];
+    const choices = ['Rock', 'Paper', 'Scissors'];
     return choices[Math.floor(Math.random() * 3 )];
 }
 
@@ -24,29 +24,33 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === computerSelection):
             resultRound.textContent = 'Draw!'
             break;
-        case (playerSelection === "Rock" && computerSelection === "Scissors"):
-        case (playerSelection === "Scissors" && computerSelection === "Paper"):
-        case (playerSelection === "Paper" && computerSelection === "Rock"):
+        case (playerSelection === 'Rock' && computerSelection === 'Scissors'):
+        case (playerSelection === 'Scissors' && computerSelection === 'Paper'):
+        case (playerSelection === 'Paper' && computerSelection === 'Rock'):
             playerScore.textContent = ++playerCounter; 
             resultRound.textContent = `You won! ${playerSelection} defeats ${computerSelection}.`;
+            checkGameStatus();
             break;
         default:
             computerScore.textContent = ++computerCounter; 
-            resultRound.textContent = `You lose! ${playerSelection} is defeated by ${computerSelection}.`;
+            resultRound.textContent = `You lost! ${playerSelection} is defeated by ${computerSelection}.`;
+            checkGameStatus();
     }
 }
 
-function game() {
-    playerCounter = 0; 
-    computerCounter = 0; 
-
-    // for (let i = 0; i < 5; i++){
-    //     playRound(getPlayerInput(), computerPlay());
-    // }
-    playerCounter > computerCounter ? console.log("You won! GG WP!") : console.log("You lost! GG WP");
+function checkGameStatus() {
+    if (playerCounter === 5 || computerCounter === 5) {
+        playerCounter > computerCounter ?  alert('You won the game! GG WP!') 
+                                        : alert('You lost the game! GG WP');
+        playerCounter = 0; 
+        computerCounter = 0; 
+        computerScore.textContent = '0';
+        playerScore.textContent = '0'; 
+        resultRound.textContent = '';
+    }; 
 }
 
-//game();
+
 
 
 // DOM manipulation
@@ -61,4 +65,5 @@ const resultRound = document.querySelector('#resultRound');
 buttons.forEach((button) => {
     button.addEventListener('click', () => playRound(button.id, computerPlay()));
 })
+
 
