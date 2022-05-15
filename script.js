@@ -22,17 +22,17 @@ function getPlayerInput() {
 function playRound(playerSelection, computerSelection) {
     switch(true) {
         case (playerSelection === computerSelection):
-            console.log(`Draw!`);
+            resultRound.textContent = 'Draw!'
             break;
         case (playerSelection === "ROCK" && computerSelection === "SCISSORS"):
         case (playerSelection === "SCISSORS" && computerSelection === "PAPER"):
         case (playerSelection === "PAPER" && computerSelection === "ROCK"):
-            playerCounter++; 
-            console.log(`You won! ${playerSelection} defeats ${computerSelection}`);
+            playerScore.textContent = ++playerCounter; 
+            resultRound.textContent = `You won! ${playerSelection} defeats ${computerSelection}.`;
             break;
         default:
-            computerCounter++;
-            console.log(`You lose! ${playerSelection} is defeated by ${computerSelection}.`);
+            computerScore.textContent = ++computerCounter; 
+            resultRound.textContent = `You lose! ${playerSelection} is defeated by ${computerSelection}.`;
     }
 }
 
@@ -51,13 +51,14 @@ function game() {
 
 // DOM manipulation
 
-
-/* Create three buttons, one for each selection. 
-Add an event listener to the buttons that call your playRound function with the 
-correct playerSelection every time a button is clicked.*/
-
 const buttons = document.querySelectorAll('button');
+
+const computerScore = document.querySelector('#computerScore');
+const playerScore = document.querySelector('#playerScore');
+
+const resultRound = document.querySelector('#resultRound'); 
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => playRound(button.id, computerPlay()));
 })
+
