@@ -4,7 +4,7 @@ let playerCounter = 0;
 let computerCounter = 0; 
 
 function computerPlay() {
-    const choices = ["ROCK", "PAPER", "SCISSORS"];
+    const choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random() * 3 )];
 }
 
@@ -24,9 +24,9 @@ function playRound(playerSelection, computerSelection) {
         case (playerSelection === computerSelection):
             resultRound.textContent = 'Draw!'
             break;
-        case (playerSelection === "ROCK" && computerSelection === "SCISSORS"):
-        case (playerSelection === "SCISSORS" && computerSelection === "PAPER"):
-        case (playerSelection === "PAPER" && computerSelection === "ROCK"):
+        case (playerSelection === "Rock" && computerSelection === "Scissors"):
+        case (playerSelection === "Scissors" && computerSelection === "Paper"):
+        case (playerSelection === "Paper" && computerSelection === "Rock"):
             playerScore.textContent = ++playerCounter; 
             resultRound.textContent = `You won! ${playerSelection} defeats ${computerSelection}.`;
             break;
