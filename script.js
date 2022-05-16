@@ -40,13 +40,13 @@ function playRound(playerSelection, computerSelection) {
 
 function checkGameStatus() {
     if (playerCounter === 5 || computerCounter === 5) {
-        playerCounter > computerCounter ?  alert('You won the game! GG WP!') 
+        playerCounter > computerCounter ? alert('You won the game! GG WP!') 
                                         : alert('You lost the game! GG WP');
         playerCounter = 0; 
         computerCounter = 0; 
         computerScore.textContent = '0';
         playerScore.textContent = '0'; 
-        resultRound.textContent = '';
+        resultRound.textContent = 'New round!';
     }; 
 }
 
