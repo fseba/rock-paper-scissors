@@ -8,17 +8,6 @@ function computerPlay() {
     return choices[Math.floor(Math.random() * 3 )];
 }
 
-
-function getPlayerInput() {
-    let playerInput = window.prompt("What is your choice? Rock, Paper or Scissors?").toUpperCase();
-    if (playerInput === "ROCK" || playerInput === "PAPER" || playerInput === "SCISSORS" ) {
-        return playerInput; 
-    } else {
-        alert("Please try again, you can only enter 'Rock', 'Paper' or 'Scissors'.");
-        return getPlayerInput();
-    }
-}
-
 function playRound(playerSelection, computerSelection) {
     switch(true) {
         case (playerSelection === computerSelection):
@@ -49,8 +38,6 @@ function checkGameStatus() {
         resultRound.textContent = 'New round!';
     }; 
 }
-
-
 
 
 // DOM manipulation

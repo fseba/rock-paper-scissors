@@ -1,7 +1,9 @@
 body {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background: #eeeef0;
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,10 +21,18 @@ h1 {
 
 main {
     background: white;
-    height: 100vh;
     width: 60%;
+    height: 100%;
     text-align: center;
 }
+
+footer {
+    background: #0a0a23;
+    width: 100vw;
+    height: 50px;
+}
+
+/* buttons with animation */
 
 button {
     background: none;
@@ -31,6 +41,14 @@ button {
     height: 150px;
     width: 120px;
     margin: 5px;
+}
+
+button:hover {
+    scale: 1.1;
+}
+
+button:active {
+    scale: 1;
 }
 
 #Rock {
@@ -45,3 +63,5 @@ button {
 #Scissors {
     background-image: url('scissors.png');
 }
+
+
