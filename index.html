@@ -5,11 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <p>Currently only playable in the console.</p>
-    <p>UI is coming soon™. </p>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <h3><u>Score:</u></h3>
+        <p>Computer: <span id="computerScore">0</span> | Player: <span id="playerScore">0</span></p>
+        <h3><u>Result:</u></h3>
+        <p id="resultRound">New round!</p>
+        <h3>Opponent's choice: </h3>
+        <img id="opponentsChoice" src="question_mark.png" alt="Opponent's choice">
+        <h3>Choose your weapon!</h3>
+        <div>
+            <button id="Rock"></button>
+            <button id="Paper"></button>
+            <button id="Scissors"></button>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
