@@ -32,6 +32,11 @@ footer {
     height: 50px;
 }
 
+img {
+    height: 150px;
+    width: auto;
+}
+
 /* buttons with animation */
 
 button {

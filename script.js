@@ -9,6 +9,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    opponentsChoice.src = computerSelection.toLowerCase() + '.png';
     switch(true) {
         case (playerSelection === computerSelection):
             resultRound.textContent = 'Draw!'
@@ -36,6 +37,7 @@ function checkGameStatus() {
         computerScore.textContent = '0';
         playerScore.textContent = '0'; 
         resultRound.textContent = 'New round!';
+        opponentsChoice.src = 'question_mark.png'
     }; 
 }
 
@@ -49,8 +51,11 @@ const playerScore = document.querySelector('#playerScore');
 
 const resultRound = document.querySelector('#resultRound'); 
 
+const opponentsChoice = document.querySelector('#opponentsChoice');
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => playRound(button.id, computerPlay()));
 })
+
 
 
